@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #02010a;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Efek Garis Bergerak */
+.lines {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.lines::before,
+.lines::after {
+    content: "";
+    position: absolute;
+    top: -200%;
+    left: 0;
+    width: 2px;
+    height: 200%;
+    background: linear-gradient(transparent, white, transparent);
+    animation: moveLines 3s linear infinite;
+    opacity: 0.7;
+}
+
+.lines::after {
+    left: 50%;
+    animation-duration: 4s;
+    opacity: 0.4;
+}
+
+@keyframes moveLines {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Kartu Tengah */
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    text-align: center;
+    z-index: 10;
+}
+
+/* Tabel */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+th {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Form */
+form {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+form input {
+    padding: 8px 10px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+}
+
+form input::placeholder {
+    color: #ddd;
+}
+
+/* Tombol */
+button {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #4CAF50;
+    cursor: pointer;
+    color: #fff;
+}
+
+button:hover {
+    background: #3c8d41;
+}
